@@ -1,0 +1,11 @@
+services:
+  ml_backend_server:
+    container_name: ml_backend
+    image: ml_backend_server:latest
+    build:
+      context: ./backend
+    restart: always
+    # volumes:
+    #   - ./backend:/code
+    ports:
+      - 8000:8000

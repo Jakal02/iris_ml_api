@@ -11,6 +11,18 @@ The model was built using [CatBoost](https://catboost.ai/). This is a performant
 
 The backend is a FASTAPI app.
 
+### Install Just to execute helper script recipes
+
+Just is a handy way to save and run project-specific commands.
+
+Install it to your `$PATH` by following the [instructions here](https://just.systems/man/en/chapter_2.html#installation).
+
+Once installed, from the project root directory, all recipes found in the `justfile` can be run by simply doing
+
+```bash
+just <recipe name>
+```
+
 
 ### Backend TODO
 
