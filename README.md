@@ -27,7 +27,7 @@ just <recipe name>
 ### Backend TODO
 
 - [X] create hello world fastapi app with test
-- [ ] dockerize it
+- [X] dockerize it
 - [ ] load model on startup
 - [ ] create model endpoint that validates args but does nothing
 - [ ] connect model and endpoint
