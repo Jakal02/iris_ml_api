@@ -8,7 +8,7 @@ To get started, make `model` your root directory, then run:
 ```bash
 $ python3 -m venv (venv name here)
 $ source ./venv/bin/activate
-$ pytohn3 -m pip install -r requirements.txt 
+$ python3 -m pip install -r requirements.txt 
 ```
 
 To get VSCode to recognize this environment, I had to type:
