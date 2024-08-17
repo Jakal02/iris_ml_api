@@ -1,7 +1,7 @@
 services:
-  ml_backend_server:
-    container_name: ml_backend
-    image: ml_backend_server:latest
+  iris_backend_server:
+    container_name: iris_ml_backend
+    image: iris_ml_backend_server:latest
     build:
       context: ./backend
     restart: always

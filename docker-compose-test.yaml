@@ -1,7 +1,7 @@
 services:
-  ml_backend_server_test:
-    container_name: ml_backend_test
-    image: ml_backend_server:latest
+  iris_backend_server_test:
+    container_name: iris_ml_backend_test
+    image: iris_ml_backend_server_test:latest
     build:
       context: ./backend
       args:

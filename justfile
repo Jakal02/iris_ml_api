@@ -12,7 +12,7 @@
     # what point start.sh gets to when it decides the containers are built
     # (we want the database migrations to finish)
     sleep 2
-    -docker compose -f docker-compose-test.yaml exec ml_backend_server_test python3 -m pytest {{pytestargs}}
+    -docker compose -f docker-compose-test.yaml exec iris_backend_server_test python3 -m pytest {{pytestargs}}
     docker image prune -f
     docker compose -f docker-compose-test.yaml down
 
