@@ -6,7 +6,15 @@ from collections.abc import AsyncGenerator
 
 import pytest
 from httpx import ASGITransport, AsyncClient
+from asgi_lifespan import LifespanManager
 from app.main import app
+
+
+@pytest.fixture(scope="function")
+async def app_manager():
+    async with LifespanManager(app) as manager:
+        yield manager.app
+
 
 @pytest.fixture
 def anyio_backend() -> str:
@@ -14,9 +22,10 @@ def anyio_backend() -> str:
     return "asyncio"
 
 @pytest.fixture(scope="function")
-async def client() -> AsyncGenerator[AsyncClient, None]:
+async def client(app_manager) -> AsyncGenerator[AsyncClient, None]:
     """Return an AsyncClient of the FastAPI app for every pytest function."""
     async with AsyncClient(
-        transport=ASGITransport(app=app), base_url="https://test/"
+        transport=ASGITransport(app=app_manager), base_url="https://test/"
     ) as c:
         yield c
+

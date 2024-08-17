@@ -23,6 +23,8 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 COPY ./app /code/app
 
+COPY ./tests /code/tests
+
 # COPY ./alembic.ini /code/
 
 COPY ./scripts/prestart.sh /code/
