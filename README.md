@@ -28,13 +28,15 @@ just <recipe name>
 
 - [X] create hello world fastapi app with test
 - [X] dockerize it
-- [ ] load model on startup
-- [ ] create model endpoint that validates args but does nothing
-- [ ] connect model and endpoint
+- [X] load model on startup
+- [X] create model endpoint that validates args but does nothing
+- [X] connect model and endpoint
+- [X] Dockerize tests and have them stateful to instantiate model
+- [ ] write tests for predict route
 - [ ] speed tests for dockerized app
 
 #### More pie-in-the-sky goals
-- [ ] make database stateful
+- [ ] make a database
     - [ ] create a dummy register endpoint
-    - [ ] create an empty database to store
+    - [ ] create an empty database to store things
     - [ ] add API key support
