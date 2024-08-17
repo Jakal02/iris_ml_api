@@ -4,7 +4,9 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from catboost import CatBoostClassifier
+import numpy as np
 
+from app.schemas.observation_schema import ObservationModel, SpeciesEnum, SpeciesModel
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -43,3 +45,20 @@ async def root_of_app():
 async def model_is_fitted():
     """Return whether the model is fitted or not."""
     return {"model status": model.is_fitted()}
+
+@app.post("/model/predict")
+async def predict_model_species(input: ObservationModel) -> SpeciesModel:
+    """Use model to guess species given observation data.
+
+    following the note given 
+    [here](https://catboost.ai/en/docs/concepts/python-reference_catboostclassifier_predict),
+    the parameters will follow the following order: the same that they appeared during training:  
+
+    sepal length, sepal width, petal length, petal width
+    """
+    global model
+    obs = [input.sepal_length, input.sepal_width, input.petal_length, input.petal_width]
+
+    result_species = model.predict(obs)[0]
+
+    return SpeciesModel(species=result_species)
