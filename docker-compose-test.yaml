@@ -1,0 +1,13 @@
+services:
+  ml_backend_server_test:
+    container_name: ml_backend_test
+    image: ml_backend_server:latest
+    build:
+      context: ./backend
+      args:
+        INSTALL_DEV: true
+    restart: always
+    # volumes:
+    #   - ./backend:/code
+    ports:
+      - 8000:8000
