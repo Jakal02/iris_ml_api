@@ -1,4 +1,4 @@
 #! /usr/bin/env sh
 set -e
 
-echo "Finished API prestart"
+echo "Finished API Pre-start"
