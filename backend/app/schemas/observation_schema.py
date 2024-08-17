@@ -7,10 +7,10 @@ class ObservationModel(BaseModel):
     """Info required to query the ml model."""
     sepal_length: float = Field(
         description= "Sepal Length (cm)",
-        gt=0, le=11)
+        gt=2, le=11)
     sepal_width: float = Field(
         description="Sepal Width (cm)",
-        gt=0, le=6)
+        gt=0.5, le=6)
     petal_length: float = Field(
         description="Petal Length (cm)",
         gt=0, le=10)
