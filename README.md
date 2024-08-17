@@ -32,8 +32,8 @@ just <recipe name>
 - [X] create model endpoint that validates args but does nothing
 - [X] connect model and endpoint
 - [X] Dockerize tests and have them stateful to instantiate model
-- [ ] write tests for predict route
-- [ ] speed tests for dockerized app
+- [X] write tests for predict route
+- [X] speed tests for dockerized app
 
 #### More pie-in-the-sky goals
 - [ ] make a database
